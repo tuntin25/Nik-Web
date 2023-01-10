@@ -8,8 +8,8 @@ export default class Renderer{
         this.scene = this.experience.scene;
         this.canvas = this.experience.canvas;
         this.camera = this.experience.camera;
-        console.log(this.canvas)
-        console.log(this.camera,this.camera.perspectiveCamera)
+        // console.log(this.canvas)
+        //console.log(this.camera,this.camera.perspectiveCamera)
         this.setRenderer();
     }
 
@@ -27,7 +27,6 @@ export default class Renderer{
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
         this.renderer.setPixelRatio(this.sizes.pixelRatio);
-
     }
 
 

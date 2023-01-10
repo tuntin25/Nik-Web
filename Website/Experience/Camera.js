@@ -1,5 +1,5 @@
-import * as THREE from "three"
-import Experience from "./Experience.js"
+import * as THREE from "three";
+import Experience from "./Experience.js";
 
 export default class Camera{
     constructor(){
@@ -7,7 +7,7 @@ export default class Camera{
         this.sizes = this.experience.sizes;
         this.scene = this.experience.scene;
         this.canvas = this.experience.canvas;
-        
+        //console.log(this.experience,this.sizes,this.scene,this.canvas)
         this.createPerspectiveCamera();
         this.createOrthographicCamera();
 
@@ -37,7 +37,7 @@ export default class Camera{
     }
 
     resize(){
-        this.perspectiveCamera = this.sizes.aspect;
+        this.perspectiveCamera.aspect = this.sizes.aspect;
         this.perspectiveCamera.updateProjectionMatrix();
 
         this.orthographicCamera.left = (-this.sizes.aspect * this.sizes.frustrum)/2;
@@ -45,7 +45,6 @@ export default class Camera{
         this.orthographicCamera.top = this.sizes.frustrum / 2;
         this.orthographicCamera.bottom = this.sizes.frustrum / 2;
         this.orthographicCamera.updateProjectionMatrix();
-
     }
     update(){
         
