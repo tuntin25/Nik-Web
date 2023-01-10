@@ -22,6 +22,7 @@ export default class Experience {
         this.sizes = new Sizes();
         this.camera = new Camera();
         this.renderer = new Renderer();
+<<<<<<< HEAD
         //this.resources = new Resources(assets);
         //this.theme = new Theme();
         this.world = new World();
@@ -53,5 +54,7 @@ export default class Experience {
         // if (this.controls) {
         //     this.controls.update();
         // }
+=======
+>>>>>>> parent of 82f305d (Modify JS file)
     }
 }
