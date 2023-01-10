@@ -1,61 +1,43 @@
 import * as THREE from "three";
-
-import Sizes from "./Utils/Sizes.js";
-import Time from "./Utils/Time.js";
-import Resources from "./Utils/Resources.js";
-import assets from "./Utils/assets.js";
-
-import Camera from "./Camera.js";
-import Theme from "./Theme.js";
+import Sizes from "./Utils/Sizes.js"
+import Camera from "./Camera.js"
 import Renderer from "./Renderer.js";
-import Preloader from "./Preloader.js";
 
-import World from "./World/World.js";
-import Controls from "./World/Controls.js";
-
-export default class Experience {
+export default class Experience{
     static instance;
-    constructor(canvas) {
-        if (Experience.instance) {
+    constructor(canvas){
+        if(Experience.instance){
             return Experience.instance;
         }
         Experience.instance = this;
         this.canvas = canvas;
         this.scene = new THREE.Scene();
-        this.time = new Time();
         this.sizes = new Sizes();
         this.camera = new Camera();
         this.renderer = new Renderer();
-        this.resources = new Resources(assets);
-        this.theme = new Theme();
-        this.world = new World();
-        this.preloader = new Preloader();
+        // const scene = new THREE.Scene();
+		// 	const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-        this.preloader.on("enablecontrols", () => {
-            this.controls = new Controls();
-        });
+		// 	const renderer = new THREE.WebGLRenderer();
+		// 	renderer.setSize( window.innerWidth, window.innerHeight );
+		// 	document.body.appendChild( renderer.domElement );
 
-        this.sizes.on("resize", () => {
-            this.resize();
-        });
-        this.time.on("update", () => {
-            this.update();
-        });
-    }
+		// 	const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+		// 	const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+		// 	const cube = new THREE.Mesh( geometry, material );
+		// 	scene.add( cube );
 
-    resize() {
-        this.camera.resize();
-        this.world.resize();
-        this.renderer.resize();
-    }
+		// 	camera.position.z = 5;
 
-    update() {
-        this.preloader.update();
-        this.camera.update();
-        this.world.update();
-        this.renderer.update();
-        if (this.controls) {
-            this.controls.update();
-        }
+		// 	function animate() {
+		// 		requestAnimationFrame( animate );
+
+		// 		cube.rotation.x += 0.01;
+		// 		cube.rotation.y += 0.01;
+
+		// 		renderer.render( scene, camera );
+		// 	};
+
+		// 	animate();
     }
 }
