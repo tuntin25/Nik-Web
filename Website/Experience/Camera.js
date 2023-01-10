@@ -21,7 +21,6 @@ export default class Camera{
             1000
         );
         this.scene.add(this.perspectiveCamera)
-        this.perspectiveCamera.position.z = 5
     }
 
     createOrthographicCamera(){
