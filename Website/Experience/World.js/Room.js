@@ -6,6 +6,7 @@ export default class Room{
         this.experience = new Experience();
         this.scene = this.experience.scene
         this.resources = this.experience.resources;
+        this.time = this.experience.time;
         this.room = this.resources.items.room;
         
         this.actualRoom = this.room.scene
@@ -16,10 +17,10 @@ export default class Room{
         this.actualRoom.children.forEach(child => {
             child.castShadow = true;
             child.receiveShadow =  true;
-            console.log(child.name)
+
             if(child instanceof THREE.Group){
                 child.children.forEach((groupchild)=>{
-                    groupchild.castShadow = true;
+                    //groupchild.castShadow = true;
                     //groupchild.receiveShadow = true;
                     
                 });
@@ -35,6 +36,11 @@ export default class Room{
         this.actualRoom.scale.set(0.11,0.11,0.11);
         this.actualRoom.rotation.y = Math.PI;
     }
+
+    setAnimation(){
+        
+    }
+
     resize(){
 
     }
