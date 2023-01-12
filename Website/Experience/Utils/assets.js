@@ -7,7 +7,7 @@ export default [
     {
         name: "screen",
         type: "videoTexture",
-        path: "/textures/KDA_MORE_4k.mp4"
+        path: "/textures/KDA_MORE_1080.mp4"
 
     },
 ]
