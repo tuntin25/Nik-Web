@@ -4,6 +4,7 @@ import Experience from "../Experience.js";
 import { EventEmitter } from "events";
 
 import Room from "./Room.js";
+import Controls from "./Controls.js";
 import Environment from "./Environment.js";
 export default class World extends EventEmitter{
     constructor(){
@@ -18,7 +19,7 @@ export default class World extends EventEmitter{
         this.resources.on("ready", () => {
             this.environment = new Environment();
             this.room = new Room();
-            console.log("Room created")
+            this.controls = new Controls();
             //this.emit("created room");
         });
     }
@@ -28,6 +29,11 @@ export default class World extends EventEmitter{
     }
 
     update(){
-
+        if(this.room){
+            this.room.update();
+        }
+        if(this.controls){
+            this.controls.update();
+        }
     }
 }
