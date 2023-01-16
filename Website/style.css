@@ -7,13 +7,13 @@
 
 html,body{
   font-family:"Nunito",sans-serif;
-  color: var(text-black);
+  color: var(--text-black);
 }
 
 :root{
   --text-black: #333332;
   --primary-color: #faf4e5;
-  --primary-pink: #e5a1aa;
+  --primary-pink: #77bfdb;
 }
 /*Experience/////////////////////////////////////////////////////////*/
 .experience{
