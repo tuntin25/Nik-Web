@@ -21,12 +21,12 @@ export default class Controls{
     setPath(){
         
         this.timeline = new GSAP.timeline();
-        this.timeline.to(this.room.position,{
-            x:2,
-            ScrollTrigger:{
-                trigger: ".first-move"
-            }
-        });
+        // this.timeline.to(this.room.position,{
+        //     x:2,
+        //     ScrollTrigger:{
+        //         trigger: ".first-move"
+        //     }
+        // });
         
     }
     resize(){
