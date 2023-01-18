@@ -51,8 +51,8 @@ export default class Camera{
         // this.scene.add(this.helper);
 
 
-        // const size = 20;
-        // const divisions = 20;
+        const size = 20;
+        const divisions = 20;
 
         // const gridHelper = new THREE.GridHelper(size,divisions);
         // this.scene.add(gridHelper);
@@ -64,7 +64,7 @@ export default class Camera{
     setOrbitControls(){
         this.controls = new OrbitControls(this.perspectiveCamera, this.canvas);
         this.controls.enableDamping = true;
-        this.controls.enableZoom = true;
+        this.controls.enableZoom = false;
     }
 
     resize(){

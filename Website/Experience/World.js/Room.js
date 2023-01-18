@@ -19,7 +19,7 @@ export default class Room{
         }
 
         this.setModel();
-        this.setAnimation();
+        //this.setAnimation();
         this.onMouseMove();
     }
     setModel(){
@@ -48,9 +48,9 @@ export default class Room{
         this.actualRoom.rotation.y = Math.PI;
     }
 
-    setAnimation(){
+    // setAnimation(){
         
-    }
+    // }
 
     onMouseMove(){
         window.addEventListener("mousemove", (e)=> {

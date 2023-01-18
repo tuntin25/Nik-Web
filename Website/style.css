@@ -134,7 +134,7 @@ html,body{
   height: 100%;
   width: calc(100% - 160px);
   margin: 0 auto;
-  max-width: 1280px ;
+  max-width: 1500px ;
 }
 
 .hero-main{
@@ -146,7 +146,7 @@ html,body{
 .hero-second{
   position: absolute;
   top: calc( 50% - 120px);
-  right:0;
+  right:220px;
 }
 
 .hero-main-title{
