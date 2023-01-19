@@ -28,7 +28,7 @@ export default class Controls{
                 return this.sizes.width * 0.00125},
             scrollTrigger:{
                 trigger: ".first-move",
-                markers:true,
+                markers:false,
                 start:"top top",
                 end: "bottom bottom",
                 scrub: 0.6,
