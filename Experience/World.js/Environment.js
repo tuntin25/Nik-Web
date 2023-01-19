@@ -59,21 +59,21 @@ export default class Environment{
             // });
             //console.log(theme)
             GSAP.to(this.sunLight.color,{
-                r:52  / 255,
-                g:36 / 255,
-                b:174 / 255,
+                r:97  / 255,
+                g:79 / 255,
+                b:223 / 255,
             });
             GSAP.to(this.ambientLight.color,{
-                r:52  / 255,
-                g:36 / 255,
-                b:174 / 255,
+                r:97  / 255,
+                g:79 / 255,
+                b:223 / 255,
             });
             GSAP.to(this.sunLight,{
-                intensity: 3,
+                intensity: 2.5,
             });
 
             GSAP.to(this.ambientLight,{
-                intensity: 3,
+                intensity: 2.5,
             });
         }else{
             console.log(theme)
@@ -86,6 +86,13 @@ export default class Environment{
                 r:255 / 255,
                 g:255 / 255,
                 b:255 / 255,
+            });
+            GSAP.to(this.sunLight,{
+                intensity: 3,
+            });
+
+            GSAP.to(this.ambientLight,{
+                intensity: 3,
             });
         }
     }
