@@ -25,7 +25,7 @@ export default class World {
     }
 
     resize(){
-
+            
     }
 
     update(){
