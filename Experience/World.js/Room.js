@@ -32,8 +32,8 @@ export default class Room{
             if(child instanceof THREE.Group){
                 child.children.forEach((groupchild)=>{
                     if(groupchild.isMesh){
-                         //groupchild.castShadow = true;
-                         //groupchild.receiveShadow = true;
+                         groupchild.castShadow = true;
+                         groupchild.receiveShadow = true;
                     }
                 });
             }
