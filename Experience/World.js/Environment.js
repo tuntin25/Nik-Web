@@ -7,7 +7,6 @@ export default class Environment{
     constructor(){
         this.experience = new Experience();
         this.scene = this.experience.scene
-        this.resources = this.experience.resources;
         
         //this.gui = new GUI({container: document.querySelector(".hero-main")});
         this.obj = {
@@ -47,17 +46,6 @@ export default class Environment{
         console.log(this.sunLight)
         if(theme === "dark"){
             // console.log(theme)
-            // GSAP.to(this.sunLight.color,{
-            //     r:108 / 255,
-            //     g:83 / 255,
-            //     b:178 / 255,
-            // });
-            // GSAP.to(this.ambientLight.color,{
-            //     r:108 / 255,
-            //     g:83 / 255,
-            //     b:178 / 255,
-            // });
-            //console.log(theme)
             GSAP.to(this.sunLight.color,{
                 r:97  / 255,
                 g:79 / 255,
@@ -76,7 +64,7 @@ export default class Environment{
                 intensity: 2.5,
             });
         }else{
-            console.log(theme)
+            //console.log(theme)
             GSAP.to(this.sunLight.color,{
                 r:255 / 255,
                 g:255 / 255,
