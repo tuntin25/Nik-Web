@@ -182,7 +182,7 @@ export default class Controls{
             all: ()=> {
                 //Mini Platform Animation
                 console.log(this.room.children)
-                this.thirdMoveTimeline = new GSAP.timeline({
+                this.secondPartTimeline = new GSAP.timeline({
                     scrollTrigger: {
                         trigger: ".third-move",
                         start: "center center",
@@ -191,8 +191,119 @@ export default class Controls{
                         invalidateOnRefresh: true,
                     },
                 });
+
+                this.room.children.forEach(child => {
+                    if(child.name ==="Mini_Floor"){
+                        this.first = GSAP.to(child.position,{
+                            x: -13.3513,
+                            z: 18.0093 ,
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Lamp1"){
+                        this.second = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Lamp2"){
+                        this.third = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Lamp3"){
+                        this.forth = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Lamp4"){
+                        this.fifth = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Mini_mat"){
+                        this.eleventh = GSAP.to(child.scale,{
+                            x: 9.5,
+                            z: 9.5,
+                            y: 9.5,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="White_Chair"){
+                        this.sixth = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Black_Chair"){
+                        this.seventh = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Chess_Table"){
+                        this.eighth = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="ChessBoard"){
+                        this.ninth = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                    if(child.name ==="Chess_Box"){
+                        this.tenth = GSAP.to(child.scale,{
+                            x: 1,
+                            z: 1,
+                            y: 1,
+                            ease: "back.out(2)",
+                            duration :1,
+                        });
+                    }
+                });
+                this.secondPartTimeline.add(this.first);
+                this.secondPartTimeline.add(this.second, "-=0.2");
+                this.secondPartTimeline.add(this.third, "-=0.2");
+                this.secondPartTimeline.add(this.forth, "-=0.2");
+                this.secondPartTimeline.add(this.fifth, "-=0.2");
+                this.secondPartTimeline.add(this.eleventh, "-=0.2");
+                this.secondPartTimeline.add(this.sixth, "-=0.2");
+                this.secondPartTimeline.add(this.seventh, "-=0.2");
+                this.secondPartTimeline.add(this.eighth, "-=0.2");
+                this.secondPartTimeline.add(this.ninth, "-=0.2");
+                this.secondPartTimeline.add(this.tenth, "-=0.2");
+            
             },
-              
           }); 
     }
     resize(){

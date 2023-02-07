@@ -39,10 +39,20 @@ export default class Room{
             }
             
             if(child.name === "Computer"){
-                console.log(child)
+                //console.log(child.name)
                 child.children[1].material = new THREE.MeshBasicMaterial({
                     map: this.resources.items.screen,
                 });
+            }
+
+            if (child.name === "Mini_Floor"){
+                //console.log(child.name)
+                child.position.x = -0.914985;
+                child.position.z = 5.57298;
+            }
+            if (child.name ==="Lamp1" || child.name ==="Lamp2"|| child.name ==="Lamp3" || child.name ==="Lamp4" || child.name ==="Black_Chair" || child.name ==="White_Chair" || child.name ==="Chess_Table" || child.name ==="ChessBoard" || child.name ==="Chess_Box" || child.name ==="Mini_mat"){
+                //console.log(child.name)
+                child.scale.set(0,0,0);
             }
         });
 
