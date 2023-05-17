@@ -39,11 +39,11 @@ export default class Environment{
         this.sunLight.position.set(-1.5, 7, 3);
         this.scene.add(this.sunLight)
 
-        this.ambientLight = new THREE.AmbientLight("#ffffff",1)
+        this.ambientLight = new THREE.AmbientLight("#ffffff",3)
         this.scene.add(this.ambientLight)
     }
     switchTheme(theme){
-        console.log(this.sunLight)
+        //console.log(this.sunLight)
         if(theme === "dark"){
             // console.log(theme)
             GSAP.to(this.sunLight.color,{
