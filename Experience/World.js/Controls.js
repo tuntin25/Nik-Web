@@ -266,53 +266,54 @@ export default class Controls{
                     });
                 });
                 //Circle Animation
-                // //First section
-                // this.firstMoveTimeline = new GSAP.timeline({
-                //     scrollTrigger: {
-                //         trigger: ".first-move",
-                //         markers:false,
-                //         start:"top top",
-                //         end: "bottom bottom",
-                //         scrub: 0.6,
-                //         invalidateOnRefresh: true,
-                //     },
-                // }).to(this.circleFirst.scale,{
-                //     x:3,
-                //     y:3,
-                //     z:3,
-                // })
+                //First section
+                this.firstMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".first-move",
+                        markers:false,
+                        start:"top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
+                    },
+                }).to(this.circleFirst.scale,{
+                    x:3,
+                    y:3,
+                    z:3,
+                })
 
-                //     //Second section
-                // this.secondMoveTimeline = new GSAP.timeline({
-                //     scrollTrigger: {
-                //         trigger: ".second-move",
-                //         markers:false,
-                //         start:"top top",
-                //         end: "bottom bottom",
-                //         scrub: 0.6,
-                //         invalidateOnRefresh: true,
-                //     },
-                // }).to(this.circleSecond.scale,{
-                //     x:3,
-                //     y:3,
-                //     z:3,
-                // })
+                    //Second section
+                this.secondMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".second-move",
+                        markers:false,
+                        start:"top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
+                    },
+                }).to(this.circleSecond.scale,{
+                    x:3,
+                    y:3,
+                    z:3,
+                })
 
-                // //Third section
-                // this.thirdMoveTimeline = new GSAP.timeline({
-                //     scrollTrigger: {
-                //         trigger: ".third-move",
-                //         markers:false,
-                //         start:"top top",
-                //         end: "bottom bottom",
-                //         scrub: 0.6,
-                //         invalidateOnRefresh: true,
-                //     },
-                // }).to(this.circleThird.scale,{
-                //     x:3,
-                //     y:3,
-                //     z:3,
-                // })
+                //Third section
+                this.thirdMoveTimeline = new GSAP.timeline({
+                    scrollTrigger: {
+                        trigger: ".third-move",
+                        markers:false,
+                        start:"top top",
+                        end: "bottom bottom",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
+                    },
+                }).to(this.circleThird.scale,{
+                    x:3,
+                    y:3,
+                    z:3,
+                })
+                
                 //Mini Platform
                 this.secondPartTimeline = new GSAP.timeline({
                     scrollTrigger: {

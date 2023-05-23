@@ -13,6 +13,7 @@ export default class Floor{
         
     
         this.setFloor();
+        this.setCircles();
     }
     setFloor(){
         this.geometry = new THREE.PlaneGeometry(100,100)
@@ -27,11 +28,12 @@ export default class Floor{
     }
     
       setCircles() {
-        const geometry = new THREE.CircleGeometry(5, 64);
-        const material = new THREE.MeshStandardMaterial({ color: 0xe5a1aa });
+        const geometry = new THREE.CircleGeometry(7, 64);
+        const material = new THREE.MeshStandardMaterial({ color:  0xe5a1aa});
         const material2 = new THREE.MeshStandardMaterial({ color: 0x8395cd });
-        const material3 = new THREE.MeshStandardMaterial({ color: 0x7ad0ac });
-
+        const material3 = new THREE.MeshStandardMaterial({ color: 0x7ad0ac});
+        //
+        //0xE3242b
         this.circleFirst = new THREE.Mesh(geometry, material);
         this.circleSecond = new THREE.Mesh(geometry, material2);
         this.circleThird = new THREE.Mesh(geometry, material3);
@@ -39,7 +41,7 @@ export default class Floor{
         this.circleFirst.position.y = -0.29;
 
         this.circleSecond.position.y = -0.28;
-        this.circleSecond.position.x = 2;
+        this.circleSecond.position.x = 1.25;
 
         this.circleThird.position.y = -0.27;
 
@@ -55,7 +57,7 @@ export default class Floor{
         this.circleFirst.receiveShadow =
             this.circleSecond.receiveShadow =
             this.circleThird.receiveShadow =
-                true;
+                false;
 
         this.scene.add(this.circleFirst);
         this.scene.add(this.circleSecond);
