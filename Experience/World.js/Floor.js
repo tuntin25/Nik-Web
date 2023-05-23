@@ -38,12 +38,12 @@ export default class Floor{
         this.circleSecond = new THREE.Mesh(geometry, material2);
         this.circleThird = new THREE.Mesh(geometry, material3);
 
-        this.circleFirst.position.y = -0.29;
+        this.circleFirst.position.y = -0.44;
 
-        this.circleSecond.position.y = -0.28;
+        this.circleSecond.position.y = -0.43;
         this.circleSecond.position.x = 1.25;
 
-        this.circleThird.position.y = -0.27;
+        this.circleThird.position.y = -0.42;
 
         this.circleFirst.scale.set(0, 0, 0);
         this.circleSecond.scale.set(0, 0, 0);
@@ -57,7 +57,7 @@ export default class Floor{
         this.circleFirst.receiveShadow =
             this.circleSecond.receiveShadow =
             this.circleThird.receiveShadow =
-                false;
+                true;
 
         this.scene.add(this.circleFirst);
         this.scene.add(this.circleSecond);

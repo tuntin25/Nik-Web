@@ -280,7 +280,15 @@ export default class Controls{
                     x:3,
                     y:3,
                     z:3,
-                })
+                    },
+                    "same"
+                ).to(
+                    this.room.position,
+                    {
+                        y: 0,
+                    },
+                    "same"
+                )
 
                     //Second section
                 this.secondMoveTimeline = new GSAP.timeline({
@@ -296,7 +304,15 @@ export default class Controls{
                     x:3,
                     y:3,
                     z:3,
-                })
+                    },
+                    "same"
+                ).to(
+                    this.room.position,
+                    {
+                        y: 0.2,
+                    },
+                    "same"
+                )
 
                 //Third section
                 this.thirdMoveTimeline = new GSAP.timeline({
@@ -312,8 +328,16 @@ export default class Controls{
                     x:3,
                     y:3,
                     z:3,
-                })
-                
+                    },
+                    "same"
+                ).to(
+                    this.room.position,
+                    {
+                        y: 0,
+                    },
+                    "same"
+                )
+
                 //Mini Platform
                 this.secondPartTimeline = new GSAP.timeline({
                     scrollTrigger: {
