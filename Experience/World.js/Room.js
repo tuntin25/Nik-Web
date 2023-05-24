@@ -59,6 +59,7 @@ export default class Room{
                 child.position.set(0,-0.40,0)
                 child.rotation.y = Math.PI /4;
             };
+            this.roomChildren[child.name.toLowerCase()] = child;
         });
         const width = 0.5;
         const height = 0.7;
@@ -81,8 +82,6 @@ export default class Room{
 
         this.scene.add(this.actualRoom);
         this.actualRoom.scale.set(0.11,0.11,0.11);
-        
-        this.actualRoom.rotation.y = Math.PI;
     }
 
     // setAnimation(){
@@ -109,6 +108,5 @@ export default class Room{
         
         this.actualRoom.rotation.y = this.lerp.current;
 
-        //this.mixer.update(this.time.delta * 0.0009);
     }
 }
