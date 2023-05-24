@@ -10,9 +10,9 @@ export default class Room{
         this.resources = this.experience.resources;
         this.time = this.experience.time;
         this.room = this.resources.items.room;
-        
         this.actualRoom = this.room.scene
-        
+        this.roomChildren = {};
+
         this.lerp = {
             current: 0 ,
             target: 0,
@@ -24,7 +24,7 @@ export default class Room{
         this.onMouseMove();
     }
     setModel(){
-        this.actualRoom.children.forEach(child => {
+        this.actualRoom.children.forEach((child) => {
             if(child.isMesh){
                 child.castShadow = true;
                 child.receiveShadow =  true;
@@ -33,9 +33,8 @@ export default class Room{
                 child.children.forEach((groupchild)=>{
                     if(groupchild.isMesh){
                         groupchild.castShadow = true;
-                        //groupchild.receiveShadow = true;
-                    }
-                });
+                        groupchild.receiveShadow = true;
+                    }});
             }
             
             if(child.name === "Computer"){
@@ -49,22 +48,34 @@ export default class Room{
                 //console.log(child.name)
                 child.position.x = -0.914985;
                 child.position.z = 5.34;
-                
             }
             if (child.name ==="Lamp1" || child.name ==="Lamp2"|| child.name ==="Lamp3" || child.name ==="Lamp4" || child.name ==="Black_Chair" || child.name ==="White_Chair" || child.name ==="Chess_Table" || child.name ==="ChessBoard" || child.name ==="Chess_Box" || child.name ==="Mini_mat"){
                 //console.log(child.name)
                 child.scale.set(0,0,0);
             }
+            //child.scale.set(0,0,0);
+            if(child.name==="Cube040"){
+                child.scale.set(1,1,1);
+                child.position.set(0,-0.40,0)
+                child.rotation.y = Math.PI /4;
+            };
         });
+        const width = 0.5;
+        const height = 0.7;
+        const intensity = 1;
+        const rectLight = new THREE.RectAreaLight(
+            0xffffff,
+            intensity,
+            width,
+            height
+        );
+        rectLight.position.set(7.68244, 7, 0.5);
+        rectLight.rotation.x = -Math.PI / 2;
+        rectLight.rotation.z = Math.PI / 4;
+        this.actualRoom.add(rectLight);
 
-        // const width = 1;
-        // const height = 1;
-        // const intensity = 1;
-        // const rectLight = new THREE.RectAreaLight( 0xffffff, intensity,  width, height );
+        this.roomChildren["rectLight"] = rectLight;
 
-        // rectLight.position.set( 0, 0, 0 );
-        // this.actualRoom.add(rectLight)
-        
         // const rectLightHelper = new RectAreaLightHelper(rectLight);
         // rectLight.add( rectLightHelper );
 
@@ -81,7 +92,7 @@ export default class Room{
     onMouseMove(){
         window.addEventListener("mousemove", (e)=> {
             this.rotation = ((e.clientX - window.innerWidth / 2)*2)/window.innerWidth;
-            this.lerp.target = this.rotation * 0.15;
+            this.lerp.target = this.rotation * 0.05;
         });
     }
 
@@ -95,6 +106,9 @@ export default class Room{
             this.lerp.target,
             this.lerp.ease
         );
+        
         this.actualRoom.rotation.y = this.lerp.current;
+
+        //this.mixer.update(this.time.delta * 0.0009);
     }
 }

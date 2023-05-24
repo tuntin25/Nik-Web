@@ -349,12 +349,12 @@ export default class Controls{
                     },
                 });
 
-                this.room.children.forEach(child => {
+                this.room.children.forEach((child) => {
                     if(child.name ==="Mini_Floor"){
                         this.first = GSAP.to(child.position,{
                             x: -13.3513,
                             z: 18.0093 ,
-                            duration :1,
+                            duration :0.3,
                         });
                     }
                     if(child.name ==="Lamp1"){

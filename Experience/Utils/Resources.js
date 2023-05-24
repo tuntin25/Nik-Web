@@ -57,7 +57,6 @@ export default class Resources extends EventEmitter{
                 this.singleAssetLoaded(asset,this.videoTexture[asset.name]);
             }
         }
-            
     }
     singleAssetLoaded(asset,file){
         this.items[asset.name] = file;
@@ -65,7 +64,7 @@ export default class Resources extends EventEmitter{
 
         console.log("asset is loading");
         if(this.loaded === this.queue){
-            console.log("all assets is loaded");
+            //console.log("all assets is loaded");
             this.emit("ready")
         }
     }
