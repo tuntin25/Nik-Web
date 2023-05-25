@@ -15,13 +15,27 @@ export default class Controls{
         this.camera = this.experience.camera;
         this.room = this.experience.world.room.actualRoom;
 
+        this.room.children.forEach((child) => {
+            if (child.type === "RectAreaLight") {
+                this.rectLight = child;
+            }
+        });
+
         this.circleFirst = this.experience.world.floor.circleFirst
         this.circleSecond = this.experience.world.floor.circleSecond
         this.circleThird = this.experience.world.floor.circleThird
         GSAP.registerPlugin(ScrollTrigger);
 
         //this.setPath();
-        this.setSmoothScroll();
+        document.querySelector(".page").style.overflow = "visible";
+
+        if (
+            !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                navigator.userAgent
+            )
+        ) {
+            this.setSmoothScroll();
+        }
         this.setScrollTrigger();
     }
     setupASScroll() {
@@ -67,7 +81,7 @@ export default class Controls{
         ScrollTrigger.matchMedia({
             //Desktop
             "(min-width: 969px)": ()=> {
-                console.log("Desktop")
+                //console.log("Desktop")
                 this.room.scale.set(0.11,0.11,0.11)
                 this.camera.orthographicCamera.position.set(0, 6.5, 10);
                 this.room.position.set(0, 0, 0);
