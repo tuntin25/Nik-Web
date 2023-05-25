@@ -21,7 +21,7 @@ export default class Renderer{
         this.renderer.physicallyCorrectLights = true;
         this.renderer.outputEncoding = THREE.sRGBEncoding;
         this.renderer.toneMapping = THREE.CineonToneMapping;
-        this.renderer.toneMappingExposure = 0.75;
+        this.renderer.toneMappingExposure = 1;
         this.renderer.shadowMap.enabled = true;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
@@ -32,6 +32,7 @@ export default class Renderer{
     resize(){
         this.renderer.setSize(this.sizes.width, this.sizes.height);
         this.renderer.setPixelRatio(this.sizes.pixelRatio);
+        console.log(this.sizes.width, this.sizes.height,this.sizes.pixelRatio);
     }
 
     update(){

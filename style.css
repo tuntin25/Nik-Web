@@ -22,9 +22,10 @@ svg{
   /*Light Theme */
   --color-text-light: #333332;
   --color-background-light: #faf4e5;
-  --color-pink-light: #7AD0AC;
-  --color-green-light: #77bfdb;
-  --color-blue-light: #80471c;
+  --color-pink-light:  #afdae0;
+  --color-green-light:  #e2939d;
+  --color-blue-light: #87daba;
+  /*pink e5a1aa*/
   --primary-blue: #77bfdb;
   /*Dark Theme */
   --color-text-dark: #faf4e5;

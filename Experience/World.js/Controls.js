@@ -345,7 +345,7 @@ export default class Controls{
                         start: "center center",
                         end: "bottom bottom",
                         scrub: 0.6,
-                        invalidateOnRefresh: true,
+                        invalidateOnRefresh: false,
                     },
                 });
 
