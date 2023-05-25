@@ -300,10 +300,12 @@ svg{
 } 
 
 .hero-second{
-  position: absolute;
-  top: calc( 50% - 120px);
-  right:220px;
+  /* position:absolute; */
+  
   color: var(--color-text);
+  padding: 5px 0;
+  bottom: 0;
+  text-align: center;
 }
 
 .hero-main-title{
