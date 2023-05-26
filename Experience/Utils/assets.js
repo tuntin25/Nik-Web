@@ -7,7 +7,7 @@ export default [
     {
         name: "screen",
         type: "videoTexture",
-        path: "/textures/KDA_MORE_1080.mp4"
+        path: "/textures/Y2Mate.is - YOASOBI「アイドル」 Official Music Video-ZRtdQ81jPUQ-720p-1655214528628.mp4"
 
     },
 ]
