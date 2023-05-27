@@ -17,7 +17,7 @@ svg{
   transition: background-color 0.5s, color 0.5s;
 }
 :root{
-  /* --text-black: #333332; */
+  /* --text-black: #333332;  */
  
   /*Light Theme */
   --color-text-light: #333332;
@@ -70,18 +70,59 @@ svg{
 /* Page /////////////////////////////////////////////////////////*/
 .page{
   z-index: 99999;
-  width: 100vw;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .page-wrapper{
   position: relative;
 }
+
+/* Preloader Stuff */
+.animatedis{
+  display: inline-block;
+  transform: translateY(100%)
+}
+
+.intro-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--color-text);
+  transform: translate(-50%, -50%);
+}
+
+.arrow-svg-wrapper{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  opacity: 0;
+  color: var(--color-text);
+  transform: translate(-50%, -50%);
+  animation: bounce 0.5s ease-in alternate infinite;
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0)
+  }
+
+  100%{
+    transform: translateY(8px)
+  }
+}
+
 /* Toggle Bar /////////////////////////////////////////////////////////*/
 .toggle-bar{
   position: fixed;
   display:flex;
+  opacity: 0;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -143,7 +184,7 @@ svg{
   padding:1000px 4%;
   margin: 0;
   background-color:var(--color-background); 
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 .left{
   margin-right: auto;
@@ -287,9 +328,9 @@ svg{
 .hero-wrapper{
   position: relative;
   height: 100%;
-  width: calc(100% - 160px);
+  width: 100%;
   margin: 0 auto;
-  max-width: 1500px ;
+  max-width: 1100px ;
 }
 
 .hero-main{
@@ -300,18 +341,27 @@ svg{
 } 
 
 .hero-second{
-  /* position:absolute; */
+  position:absolute;
+  top: calc(50% - 120px);
+  left:0;
   
   color: var(--color-text);
-  padding: 5px 0;
+  /* padding: 5px 0;
   bottom: 0;
-  text-align: center;
+  text-align: center; */
+}
+.unselectable {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
 }
 
 .hero-main-title{
   font-size: 64px;
   color: var(--color-text);
 }
+
 .hero-main-description{
   font-size: 32px;
   color: var(--color-text);
@@ -350,6 +400,7 @@ svg{
 .pink-background{
   background-color: var(--color-pink);
 }
+
 /* Media Queries */
 @media(max-width:968px){
   .section{
@@ -358,5 +409,31 @@ svg{
   .progress-bar-wrapper-left{
     right:0;
     left: auto;
+  }
+  .hero-main{
+    bottom: 120px;
+  }
+  .hero-second{
+    top: 160px;
+  }
+  .hero-wrapper{
+    width: calc(100% - 60px);
+    
+  }
+  .hero-main-title{
+    font-size: 32px;
+    
+  }
+  .hero-main-description{
+    font-size: 18px;
+  }
+  .hero-second-subheading{
+    font-size: 18px;
+  }
+  .unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
   }
 }
