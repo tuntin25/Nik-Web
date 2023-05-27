@@ -62,7 +62,7 @@ export default class Room {
         child.rotation.y = Math.PI / 4;
       }
       this.roomChildren[child.name.toLowerCase()] = child;
-      console.log(child.name.toLowerCase());
+      //console.log(child.name.toLowerCase());
     });
     const width = 0.5;
     const height = 0.7;
