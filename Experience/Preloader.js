@@ -48,7 +48,7 @@ export default class Preloader extends EventEmitter {
             duration: 0.7,
           })
           .to(this.room.position, {
-            x: -0.95,
+            x: -1.6,
             ease: "power1.out",
             duration: 0.7,
             // onComplete: resolve,
@@ -383,7 +383,7 @@ export default class Preloader extends EventEmitter {
 
   move() {
     if (this.device === "desktop") {
-      this.room.position.set(-0.95, 0, 0);
+      this.room.position.set(-1.6, 0, 0);
     } else {
       this.room.position.set(0, 0, -0.95);
     }
