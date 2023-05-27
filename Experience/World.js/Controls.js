@@ -90,8 +90,8 @@ export default class Controls {
       "(min-width: 969px)": () => {
         //console.log("Desktop")
         this.room.scale.set(0.11, 0.11, 0.11);
-        this.rectLight.width = 0.5;
-        this.rectLight.height = 0.7;
+        this.rectLight.width = 0.1;
+        this.rectLight.height = 0.1;
         this.camera.orthographicCamera.position.set(0, 6.5, 10);
         this.room.position.set(0, 0, 0);
         //First section
@@ -152,8 +152,8 @@ export default class Controls {
           .to(
             this.rectLight,
             {
-              width: 0.5 * 4,
-              height: 0.7 * 4,
+              width: 0.1,
+              height: 0.1,
             },
             "same"
           );
@@ -180,8 +180,8 @@ export default class Controls {
         // Resets
         this.room.scale.set(0.07, 0.07, 0.07);
         this.room.position.set(0, 0, 0);
-        this.rectLight.width = 0.3;
-        this.rectLight.height = 0.4;
+        this.rectLight.width = 0.1;
+        this.rectLight.height = 0.1;
         this.camera.orthographicCamera.position.set(0, 6.5, 10);
 
         // First section -----------------------------------------
@@ -221,8 +221,8 @@ export default class Controls {
           .to(
             this.rectLight,
             {
-              width: 0.3 * 3.4,
-              height: 0.4 * 3.4,
+              width: 0.1,
+              height: 0.1,
             },
             "same"
           )

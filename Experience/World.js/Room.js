@@ -64,16 +64,16 @@ export default class Room {
       this.roomChildren[child.name.toLowerCase()] = child;
       //console.log(child.name.toLowerCase());
     });
-    const width = 0.5;
-    const height = 0.7;
-    const intensity = 1;
+    const width = 0.2;
+    const height = 0.2;
+    const intensity = 15;
     const rectLight = new THREE.RectAreaLight(
       0xffffff,
       intensity,
       width,
       height
     );
-    rectLight.position.set(7.68244, 7, 0.5);
+    rectLight.position.set(-15.8, 5, 0);
     rectLight.rotation.x = -Math.PI / 2;
     rectLight.rotation.z = Math.PI / 4;
     this.actualRoom.add(rectLight);
@@ -81,7 +81,7 @@ export default class Room {
     this.roomChildren["rectLight"] = rectLight;
 
     // const rectLightHelper = new RectAreaLightHelper(rectLight);
-    // rectLight.add( rectLightHelper );
+    // rectLight.add(rectLightHelper);
 
     this.scene.add(this.actualRoom);
     this.actualRoom.scale.set(0.11, 0.11, 0.11);

@@ -37,6 +37,7 @@ export default class Preloader extends EventEmitter {
   firstIntro() {
     return new Promise((resolve) => {
       this.timeline = new GSAP.timeline();
+      this.timeline.set(".animatedis", { y: 0, yPercent: 100 });
       this.timeline.to("preloader", {
         opacity: 0,
         delay: 1,
@@ -77,7 +78,7 @@ export default class Preloader extends EventEmitter {
       }
       this.timeline
         .to(".intro-text .animatedis", {
-          yPercent: -100,
+          yPercent: 0,
           stagger: 0.05,
           ease: "back.out(1.7)",
         })
@@ -180,7 +181,7 @@ export default class Preloader extends EventEmitter {
         .to(
           ".hero-main-title .animatedis",
           {
-            yPercent: -100,
+            yPercent: 0,
             stagger: 0.07,
             ease: "back.out(1.7)",
           },
@@ -189,7 +190,7 @@ export default class Preloader extends EventEmitter {
         .to(
           ".hero-main-description .animatedis",
           {
-            yPercent: -100,
+            yPercent: 0,
             stagger: 0.07,
             ease: "back.out(1.7)",
           },
@@ -198,7 +199,7 @@ export default class Preloader extends EventEmitter {
         .to(
           ".first-sub .animatedis",
           {
-            yPercent: -100,
+            yPercent: 0,
             stagger: 0.07,
             ease: "back.out(1.7)",
           },
@@ -207,7 +208,7 @@ export default class Preloader extends EventEmitter {
         .to(
           ".second-sub .animatedis",
           {
-            yPercent: -100,
+            yPercent: 0,
             stagger: 0.07,
             ease: "back.out(1.7)",
           },
@@ -396,6 +397,8 @@ export default class Preloader extends EventEmitter {
   }
 
   scale() {
+    this.roomChildren.rectLight.width = 0;
+    this.roomChildren.rectLight.height = 0;
     if (this.device === "desktop") {
       this.room.scale.set(0.11, 0.11, 0.11);
     } else {
