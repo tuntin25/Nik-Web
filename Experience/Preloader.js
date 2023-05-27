@@ -48,7 +48,7 @@ export default class Preloader extends EventEmitter {
             duration: 0.7,
           })
           .to(this.room.position, {
-            x: -0.75,
+            x: -0.95,
             ease: "power1.out",
             duration: 0.7,
             // onComplete: resolve,
@@ -63,7 +63,7 @@ export default class Preloader extends EventEmitter {
             duration: 0.7,
           })
           .to(this.room.position, {
-            z: -0.75,
+            z: -0.95,
             ease: "power1.out",
             duration: 0.7,
             // onComplete: resolve,
@@ -383,9 +383,9 @@ export default class Preloader extends EventEmitter {
 
   move() {
     if (this.device === "desktop") {
-      this.room.position.set(-0.75, 0, 0);
+      this.room.position.set(-0.95, 0, 0);
     } else {
-      this.room.position.set(0, 0, -0.75);
+      this.room.position.set(0, 0, -0.95);
     }
   }
 
