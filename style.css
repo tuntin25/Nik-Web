@@ -90,12 +90,13 @@ svg{
   align-items: center;
 }
 .circle{
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   margin: 7px;
   background-color: var(--color-text-light);
-  animation:  load 1s ease-in-out infinite;
+  /* background-color:var(--color-background-preloader); */
+  animation:  load 1.3s ease-in-out infinite;
 }
 .circle:nth-child(2){
   animation-delay: 0.1s;

@@ -48,10 +48,10 @@ export default class Preloader extends EventEmitter {
       if (this.device === "desktop") {
         this.timeline
           .to(this.roomChildren.cube040.scale, {
-            x: 1.4,
-            y: 1.4,
-            z: 1.4,
-            ease: "back.out(2.5)",
+            x: 1.6,
+            y: 1.6,
+            z: 1.6,
+            ease: "back.out(3)",
             duration: 0.7,
           })
           .to(this.room.position, {
@@ -63,10 +63,10 @@ export default class Preloader extends EventEmitter {
       } else {
         this.timeline
           .to(this.roomChildren.cube040.scale, {
-            x: 1.4,
-            y: 1.4,
-            z: 1.4,
-            ease: "back.out(2.5)",
+            x: 1.6,
+            y: 1.6,
+            z: 1.6,
+            ease: "back.out(3)",
             duration: 0.7,
           })
           .to(this.room.position, {
